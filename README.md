@@ -56,6 +56,10 @@ apply again.
 | `invited` | An invitation has been issued on-chain. |
 | `spam` | Not a genuine application. |
 
+Labels are defined in [`.github/labels.yml`](.github/labels.yml) and created
+automatically by the *Sync labels* workflow. To provision them on a fresh
+repository, run that workflow once from the **Actions** tab.
+
 ## License
 
 The content of this repository is released under

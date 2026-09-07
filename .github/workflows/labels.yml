@@ -1,0 +1,52 @@
+name: Sync labels
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/labels.yml"]
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create or update labels from .github/labels.yml
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, re, subprocess
+
+          labels = []
+          name = color = desc = None
+          for line in open(".github/labels.yml"):
+              line = line.rstrip()
+              m = re.match(r'- name:\s*"?(.+?)"?\s*$', line)
+              if m:
+                  if name:
+                      labels.append((name, color, desc or ""))
+                  name, color, desc = m.group(1), "ededed", ""
+                  continue
+              m = re.match(r'\s+color:\s*"?(.+?)"?\s*$', line)
+              if m:
+                  color = m.group(1)
+                  continue
+              m = re.match(r'\s+description:\s*(.+?)\s*$', line)
+              if m:
+                  desc = m.group(1)
+          if name:
+              labels.append((name, color, desc or ""))
+
+          for name, color, desc in labels:
+              r = subprocess.run(
+                  ["gh", "label", "create", name, "--color", color,
+                   "--description", desc, "--force"],
+                  capture_output=True, text=True,
+              )
+              print(name, "->", (r.stdout or r.stderr).strip())
+          PY

@@ -1,0 +1,30 @@
+# Labels for this repository. Kept in sync by .github/workflows/labels.yml.
+- name: application
+  color: "149954"
+  description: An expression of interest in a community role.
+
+- name: "role: regenerator"
+  color: "1f7a4d"
+  description: Applying to be a regenerator.
+- name: "role: inspector"
+  color: "1f7a4d"
+  description: Applying to be an inspector.
+- name: "role: researcher"
+  color: "1f7a4d"
+  description: Applying to be a researcher.
+- name: "role: developer"
+  color: "1f7a4d"
+  description: Applying to be a developer.
+- name: "role: contributor"
+  color: "1f7a4d"
+  description: Applying to be a contributor.
+- name: "role: activist"
+  color: "1f7a4d"
+  description: Applying to be an activist.
+
+- name: invited
+  color: "0b6b3a"
+  description: An on-chain invitation has been issued.
+- name: spam
+  color: "b60205"
+  description: Not a genuine application.
