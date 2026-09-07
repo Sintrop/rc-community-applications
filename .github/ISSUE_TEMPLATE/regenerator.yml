@@ -1,0 +1,50 @@
+name: Apply as Regenerator
+description: Express interest in joining the Regeneration Credit as a regenerator.
+title: "[Regenerator] "
+labels: ["application", "role: regenerator"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Regenerators register and manage a regeneration area (a polygon of 3 to 10 points, between 2,500 and 1,000,000 m²) and earn Regeneration Credit in proportion to the verified impact of their area, after at least three validated inspections.
+
+        **Everything you write below is public and permanent** (see the repository README).
+        Membership is granted by an on-chain invitation from the community; there is no
+        guaranteed timeline. Supporters do not need to apply — see
+        <https://regenerationcredit.org/supporters>.
+  - type: input
+    id: name
+    attributes:
+      label: Name or handle
+      description: A real name or a pseudonym — your choice.
+    validations:
+      required: true
+  - type: input
+    id: wallet
+    attributes:
+      label: Wallet address
+      description: The address that would receive the on-chain invitation.
+      placeholder: "0x0000000000000000000000000000000000000000"
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: How can you contribute as a regenerator?
+      description: What would you work on? Links to past work or a short plan help the community decide.
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (optional)
+      description: Discord handle, email or anything else, if you want the community to be able to reach you off GitHub.
+    validations:
+      required: false
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - label: I understand this application and everything in it — including my wallet address — is public and permanent.
+          required: true

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: I want to support the project
+    url: https://regenerationcredit.org/supporters
+    about: Supporters do not need an invitation. Start here.
+  - name: About the roles
+    url: https://regenerationcredit.org/community
+    about: What each role does and how it is rewarded.
+  - name: Questions before applying
+    url: https://github.com/Sintrop/rc-community-applications/discussions
+    about: Not sure which role fits? Ask here first.

@@ -1,0 +1,50 @@
+name: Apply as Researcher
+description: Express interest in joining the Regeneration Credit as a researcher.
+title: "[Researcher] "
+labels: ["application", "role: researcher"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Researchers produce environmental research, evaluation methods and impact-calculator items for the protocol, and earn from the researcher pool for each valid publication.
+
+        **Everything you write below is public and permanent** (see the repository README).
+        Membership is granted by an on-chain invitation from the community; there is no
+        guaranteed timeline. Supporters do not need to apply — see
+        <https://regenerationcredit.org/supporters>.
+  - type: input
+    id: name
+    attributes:
+      label: Name or handle
+      description: A real name or a pseudonym — your choice.
+    validations:
+      required: true
+  - type: input
+    id: wallet
+    attributes:
+      label: Wallet address
+      description: The address that would receive the on-chain invitation.
+      placeholder: "0x0000000000000000000000000000000000000000"
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: How can you contribute as a researcher?
+      description: What would you work on? Links to past work or a short plan help the community decide.
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (optional)
+      description: Discord handle, email or anything else, if you want the community to be able to reach you off GitHub.
+    validations:
+      required: false
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - label: I understand this application and everything in it — including my wallet address — is public and permanent.
+          required: true
